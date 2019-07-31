@@ -1,0 +1,24 @@
+<h2>All record </h2>
+
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Description</th>
+	</tr>
+
+	<tbody>
+
+		<% @users.each do |f| %>
+
+			<tr>
+				<td> <%= f.title %> </td>
+				<td> <%= f.description %> </td>
+				<td><%= link_to 'Edit', edit_user_path(f) %> </td>
+				<td><%= link_to 'show',user_path(f) %> </td>
+				<td><%= link_to 'Delete', user_path(f), method: :delete, data: {confirm: "Ar you sure?"} %></td>
+
+			</tr>
+		<% end %>
+	<tbody>
+</table>
